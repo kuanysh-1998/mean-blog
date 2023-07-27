@@ -1,0 +1,22 @@
+<div class="posts">
+  <div class="container content">
+    <div
+      class="post"
+      *ngFor="let post of posts"
+      (click)="openPostById(post.id)"
+    >
+      <img src="{{ post.image.url }}" alt="{{ post.category }}" />
+      <small class="topic"> {{ post.category }} </small>
+      <h2 class="title">
+        {{ post.title }}
+      </h2>
+      <div>
+        <quill-view-html
+          [content]="post.description | slice: 0 : 100"
+        ></quill-view-html>
+        <!-- <span *ngIf="post.description.length > 60">...</span> -->
+      </div>
+      <small class="date">{{ post.createdAt | date }}</small>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.headerBottom {
+
+
+    .typingText {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+        & h2 {
+            font-size: 30px;
+        }
+        & h1 {
+            font-size: 50px;
+        }
+        & h1, h2 {
+            color: #ffffff;
+        }
+    }
+}

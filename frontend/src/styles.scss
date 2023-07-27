@@ -1,0 +1,40 @@
+:root {
+  --main-color: #efefef;
+  --primary-color: #1d2d3d;
+  --secondary-color: #495e74;
+  --gray-color: #778697;
+  --dark-color: #292b2c;
+  --blue-color: #397ade;
+  --green-color: #27ae60;
+  --green-sea-color: #16a085;
+  --pumpkin-color: #d35400;
+  --red-color: #d9534f;
+  --white-color: #fff;
+  --yellow-color: #f1cf71;
+  --bg-color: #f9f8f4;
+  --transition: all 0.4s ease;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", Roboto, system-ui, Tahoma, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
