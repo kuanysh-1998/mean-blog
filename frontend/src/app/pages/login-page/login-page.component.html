@@ -1,15 +1,6 @@
 <div class="register">
-  <h2>Создать новый аккаунт</h2>
-  <form [formGroup]="registerForm" (ngSubmit)="submit()">
-    <div class="form__control">
-      <label>Имя пользователя </label>
-      <input
-        type="text"
-        formControlName="username"
-        placeholder="Введите Имя Пользователя"
-      />
-    </div>
-
+  <h2>Войти в свой аккаунт</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
     <div class="form__control">
       <label>Email</label>
       <input type="text" formControlName="email" placeholder="Введите Email" />
@@ -38,6 +29,11 @@
       </div>
     </div>
 
-    <button type="submit">Зарегистрироваться</button>
+    <button type="submit">Войти</button>
+
+    <div class="register">
+      Новый Пользователь? &nbsp;
+      <a routerLink="/register">Зарегистрироваться</a>
+    </div>
   </form>
 </div>

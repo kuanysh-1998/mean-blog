@@ -4,14 +4,13 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  selector: 'app-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss'],
 })
-export class RegisterComponent implements OnInit {
-  registerForm!: FormGroup;
+export class LoginPageComponent implements OnInit {
+  loginForm!: FormGroup;
   isSubmitted = false;
-
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
@@ -19,22 +18,21 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      username: ['', Validators.required],
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
 
   get fc() {
-    return this.registerForm.controls;
+    return this.loginForm.controls;
   }
 
   submit() {
     this.isSubmitted = true;
-    if (this.registerForm.invalid) return;
+    if (this.loginForm.invalid) return;
 
-    this.userService.register(this.registerForm.value).subscribe((res) => {
+    this.userService.login(this.loginForm.value).subscribe((res) => {
       this.router.navigateByUrl('/');
     });
   }

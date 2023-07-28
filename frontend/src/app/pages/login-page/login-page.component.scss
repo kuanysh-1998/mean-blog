@@ -1,0 +1,31 @@
+.register {
+  margin-top: 70px;
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+
+    button {
+      width: 100%;
+      background: #0060a0;
+      color: #ffffff;
+      padding: 10px;
+      outline: none;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .register {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

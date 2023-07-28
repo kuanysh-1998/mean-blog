@@ -1,0 +1,8 @@
+<div *ngIf="userId; else notfound">
+  <h1>Ваша электронная почта успешно подтверждена!</h1>
+  <a routerLink="/login">Войти </a>
+</div>
+
+<ng-template #notfound>
+  <h1>Не Найдена!</h1>
+</ng-template>

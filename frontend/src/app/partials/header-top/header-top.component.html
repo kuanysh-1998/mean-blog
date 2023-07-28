@@ -15,8 +15,17 @@
     </div>
 
     <div class="right">
-      <a href="#">Войти</a>
-      <a routerLink="/register">Регистрация</a>
+      <ul>
+        <a *ngIf="!currentUser.token" routerLink="/login">Войти</a>
+
+        <li *ngIf="currentUser.token" class="container__menu">
+          <a routerLink="#"> {{ currentUser.username }} </a>
+          <div class="menu">
+            <a routerLink="/profile">Профиль</a>
+            <a (click)="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

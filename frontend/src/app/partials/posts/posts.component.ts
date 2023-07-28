@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IPost } from 'src/app/models/interfaces';
+import { IPost } from 'src/app/models/models';
 import { PostsService } from 'src/app/services/posts.service';
 
 @Component({

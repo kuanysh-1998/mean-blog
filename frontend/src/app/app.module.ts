@@ -14,6 +14,8 @@ import { HeaderBottomComponent } from './partials/header-bottom/header-bottom.co
 import { PostsComponent } from './partials/posts/posts.component';
 import { PostPageComponent } from './pages/post-page/post-page.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { RegisterComponent } from './pages/register/register.component';
     PostsComponent,
     PostPageComponent,
     RegisterComponent,
+    LoginPageComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
