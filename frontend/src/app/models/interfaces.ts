@@ -10,3 +10,9 @@ export interface IPost {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface IUser {
+  userName?: string;
+  email: string;
+  password: string;
+}

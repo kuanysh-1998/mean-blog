@@ -7,11 +7,12 @@
     >
       <img src="{{ post.image.url }}" alt="{{ post.category }}" />
       <small class="topic"> {{ post.category }} </small>
-      <h2 class="title">
+      <h1 class="title">
         {{ post.title }}
-      </h2>
+      </h1>
       <div>
         <quill-view-html
+        class="description"
           [content]="post.description | slice: 0 : 100"
         ></quill-view-html>
         <!-- <span *ngIf="post.description.length > 60">...</span> -->

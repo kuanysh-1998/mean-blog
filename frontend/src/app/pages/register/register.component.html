@@ -1,0 +1,21 @@
+<div class="register">
+  <h2>Создать новый аккаунт</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <div class="form__control">
+      <label>Имя пользователя </label>
+      <input type="text" formControlName="userName" />
+    </div>
+
+    <div class="form__control">
+      <label>Email</label>
+      <input type="text" formControlName="email" />
+    </div>
+
+    <div class="form__control">
+      <label> Пароль </label>
+      <input type="text" formControlName="password" />
+    </div>
+
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+</div>

@@ -13,6 +13,7 @@ import { HeaderTopComponent } from './partials/header-top/header-top.component';
 import { HeaderBottomComponent } from './partials/header-bottom/header-bottom.component';
 import { PostsComponent } from './partials/posts/posts.component';
 import { PostPageComponent } from './pages/post-page/post-page.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PostPageComponent } from './pages/post-page/post-page.component';
     HeaderBottomComponent,
     PostsComponent,
     PostPageComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

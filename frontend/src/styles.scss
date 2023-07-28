@@ -1,20 +1,10 @@
 :root {
-  --main-color: #efefef;
-  --primary-color: #1d2d3d;
-  --secondary-color: #495e74;
-  --gray-color: #778697;
-  --dark-color: #292b2c;
-  --blue-color: #397ade;
-  --green-color: #27ae60;
-  --green-sea-color: #16a085;
-  --pumpkin-color: #d35400;
-  --red-color: #d9534f;
-  --white-color: #fff;
-  --yellow-color: #f1cf71;
-  --bg-color: #f9f8f4;
-  --transition: all 0.4s ease;
+  --primary-color: #dc3545;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
 }
-
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -37,4 +27,35 @@ textarea:focus {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+}
+
+.form__control {
+  display: block;
+  color: #888;
+  margin-bottom: 0.8rem;
+
+  &.invalid {
+    color: var(--primary-color);
+    input {
+      border-color: var(--primary-color);
+    }
+  }
+
+  .validation {
+    color: var(--primary-color);
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
