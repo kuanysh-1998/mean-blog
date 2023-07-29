@@ -5,6 +5,7 @@ import { PostPageComponent } from './pages/post-page/post-page.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'users/:userId/verify/:token',
     component: VerifyEmailComponent,
+  },
+  {
+    path: 'create-post',
+    component: CreatePostComponent,
   },
 ];
 

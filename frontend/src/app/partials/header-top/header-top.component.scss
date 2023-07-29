@@ -35,6 +35,9 @@
     .right {
       ul {
         list-style-type: none;
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
 
         a {
           color: #ffffff;
@@ -77,4 +80,11 @@
       }
     }
   }
+}
+
+
+mat-icon {
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
 }

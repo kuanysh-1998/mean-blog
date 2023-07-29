@@ -1,0 +1,16 @@
+<div class="createPost">
+  <h2>Создать Новый Пост</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" placeholder="Название Поста" formControlName="title" />
+    <select formControlName="category">
+      <option value="">Выбрать Книгу</option>
+      <option *ngFor="let category of categories">{{ category.title }}</option>
+    </select>
+
+    <quill-editor formControlName="description"></quill-editor>
+
+    <input class="inputImage" type="file" (change)="onFileSelected($event)" />
+
+    <button type="submit">Создать</button>
+  </form>
+</div>

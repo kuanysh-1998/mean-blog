@@ -11,13 +11,16 @@
         <li routerLinkActive="active">
           <a routerLink="/posts">Блог</a>
         </li>
+        <li routerLinkActive="active">
+          <a routerLink="/create-post">Новый Пост</a>
+        </li>
       </ul>
     </div>
 
     <div class="right">
       <ul>
+        <mat-icon (click)="openSearchWindow()">search</mat-icon>
         <a *ngIf="!currentUser.token" routerLink="/login">Войти</a>
-
         <li *ngIf="currentUser.token" class="container__menu">
           <a routerLink="#"> {{ currentUser.username }} </a>
           <div class="menu">

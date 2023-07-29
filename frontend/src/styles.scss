@@ -1,3 +1,5 @@
+@import "./../node_modules/quill/dist/quill.core.css";
+@import "./../node_modules/quill/dist/quill.snow.css";
 :root {
   --primary-color: #dc3545;
   --dark-color: #333333;
@@ -58,4 +60,13 @@ textarea {
   font-size: 1.2rem;
   border: 1px solid #ccc;
   border-radius: 10px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

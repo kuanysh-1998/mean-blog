@@ -1,0 +1,25 @@
+.content {
+  .search {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  input {
+    border: none;
+    width: 400px;
+  }
+
+  .post {
+    padding: 7px;
+    cursor: pointer;
+    &:hover {
+      background: #f5f5f5;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
+    color: #111111;
+  }
+}

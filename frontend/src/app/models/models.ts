@@ -37,6 +37,13 @@ export interface IUserRegister {
   password: string;
 }
 
+export interface ICategories {
+  _id: string;
+  user: string;
+  title: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
 export class User {
   _id!: string;
   username?: string;
