@@ -1,0 +1,47 @@
+<div class="createPost">
+  <h2>Создать Новый Пост</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div
+      [ngClass]="{
+        invalid: form.get('title')?.touched && form.get('title')?.invalid
+      }"
+    >
+      <input type="text" placeholder="Название Поста" formControlName="title" />
+      <div
+        class="vlidation"
+        *ngIf="form.get('title')?.touched && form.get('title')?.invalid"
+      >
+        <small *ngIf="form.get('title')?.errors?.['required']"
+          >Please Write Title</small
+        >
+      </div>
+    </div>
+
+    <div
+      [ngClass]="{
+        invalid: form.get('category')?.touched && form.get('category')?.invalid
+      }"
+    >
+      <select formControlName="category">
+        <option value="">Выбрать Книгу</option>
+        <option *ngFor="let category of categories">
+          {{ category.title }}
+        </option>
+      </select>
+
+      <div
+        *ngIf="form.get('category')?.touched && form.get('category')?.invalid"
+      >
+        <small *ngIf="form.get('category')?.errors?.['required']"
+          >Please Choose Category</small
+        >
+      </div>
+    </div>
+
+    <quill-editor formControlName="description"></quill-editor>
+
+    <input class="inputImage" type="file" (change)="onFileSelected($event)" />
+
+    <button type="submit">Создать</button>
+  </form>
+</div>

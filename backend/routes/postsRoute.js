@@ -19,6 +19,7 @@ router
   .get(getAllPostsCtrl);
 
 router.route("/count").get(getPostCountCtrl);
+
 router
   .route("/:id")
   .get(validateObjectId, getSinglePostCtrl)

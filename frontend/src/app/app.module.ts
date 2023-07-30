@@ -5,9 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { QuillModule } from 'ngx-quill';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogComponent } from './partials/mat-dialog/mat-dialog.component';
 import { FilterPostsPipe } from './pipes/filter-posts.pipe';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { FooterComponent } from './partials/footer/footer.component';
+import { LoadingInterceptor } from './shared/loading.interceptor';
+import { LoadingComponent } from './partials/loading/loading.component';
+import { UpdatePostComponent } from './admin/update-post/update-post.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,9 @@ import { CreatePostComponent } from './pages/create-post/create-post.component';
     MatDialogComponent,
     FilterPostsPipe,
     CreatePostComponent,
+    FooterComponent,
+    LoadingComponent,
+    UpdatePostComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,13 @@ import { CreatePostComponent } from './pages/create-post/create-post.component';
     MatFormFieldModule,
     QuillModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

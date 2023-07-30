@@ -5,3 +5,4 @@ export const POSTS_URL = BASE_URL + '/api/posts';
 export const USER_LOGIN_URL = BASE_URL + '/api/auth/login';
 export const USER_REGISTER_URL = BASE_URL + '/api/auth/register';
 export const CATEGORIES_URL = BASE_URL + '/api/categories';
+

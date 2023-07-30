@@ -11,7 +11,7 @@
         <li routerLinkActive="active">
           <a routerLink="/posts">Блог</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="currentUser.isAdmin">
           <a routerLink="/create-post">Новый Пост</a>
         </li>
       </ul>

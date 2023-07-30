@@ -3,8 +3,14 @@
     <small>{{ post.category }}</small>
     <h1>{{ post.title }}</h1>
     <img [src]="post.image.url" alt="" />
+
     <div>
-      <quill-view-html class="description" [content]="post.description"></quill-view-html>
+      <quill-view-html [content]="post.description"></quill-view-html>
+    </div>
+
+    <div class="actions">
+      <mat-icon (click)="updatePostById(post.id)">edit</mat-icon>
+      <mat-icon>delete</mat-icon>
     </div>
   </div>
 </div>

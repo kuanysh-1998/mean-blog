@@ -6,6 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { UpdatePostComponent } from './admin/update-post/update-post.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'create-post',
     component: CreatePostComponent,
+  },
+  {
+    path: 'admin/post/:id/update',
+    component: UpdatePostComponent,
   },
 ];
 

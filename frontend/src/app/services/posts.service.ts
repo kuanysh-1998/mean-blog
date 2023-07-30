@@ -27,10 +27,18 @@ export class PostsService {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.post<IPost>(POSTS_URL, formData, {headers});
+    return this.http.post<IPost>(POSTS_URL, formData, { headers });
   }
+
 
   getPostById(id: string): Observable<IPost> {
     return this.http.get<IPost>(POSTS_URL + `/${id}`);
+  }
+
+  updatePost(id: string, post: IPost): Observable<IPost> {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + this.token,
+    });
+    return this.http.put<IPost>(POSTS_URL + `/${id}`, post, { headers });
   }
 }

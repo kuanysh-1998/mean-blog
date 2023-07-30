@@ -10,13 +10,11 @@
       <h1 class="title">
         {{ post.title }}
       </h1>
-      <div>
-        <quill-view-html
+
+      <quill-view-html
         class="description"
-          [content]="post.description | slice: 0 : 100"
-        ></quill-view-html>
-        <!-- <span *ngIf="post.description.length > 60">...</span> -->
-      </div>
+        [content]="post.description | slice: 0 : 100"
+      ></quill-view-html>
       <small class="date">{{ post.createdAt | date }}</small>
     </div>
   </div>
