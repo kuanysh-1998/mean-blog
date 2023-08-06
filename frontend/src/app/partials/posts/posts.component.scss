@@ -1,15 +1,22 @@
 .posts {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    column-gap: 2rem;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .post {
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
     margin-bottom: 40px;
     padding: 5px;
     display: flex;
@@ -29,8 +36,16 @@
       margin-left: -1rem;
       margin-top: -1rem;
     }
-    
   }
-
-
 }
+
+// @media screen and (max-width: 1024px) {
+//   .posts {
+//     margin: 0 auto;
+//     .content{
+//       grid-template-columns: repeat(2, 1fr);
+//       column-gap: 1rem;
+//       align-items: center;
+//     }
+//   }
+// }

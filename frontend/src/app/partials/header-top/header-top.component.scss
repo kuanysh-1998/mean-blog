@@ -1,12 +1,18 @@
 .header {
-  padding: 20px 0 20px 0;
+  padding: 10px 0 10px 0;
+  margin-bottom: -5px;
   background: #0060a0;
   position: relative;
+
+  .searchAdaptive {
+    display: none;
+  }
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+
 
     .left ul {
       display: flex;
@@ -35,7 +41,6 @@
     }
 
     .right {
-
       ul {
         list-style-type: none;
         display: flex;
@@ -82,14 +87,15 @@
         }
       }
     }
-  }
 
+
+  }
   .burgerMenu {
     display: none;
     position: absolute;
+    cursor: pointer;
   }
 }
-
 
 mat-icon {
   color: #ffffff;
@@ -99,14 +105,100 @@ mat-icon {
 
 @media screen and (max-width: 780px) {
   .header {
+    padding: 0;
+
     &__content {
       flex-direction: column;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: -1000px;
+      left: 0;
+      z-index: 1030;
+      transition: all 0.4s ease;
 
+      &.active {
+        top: 0;
+        height: 100vh;
+      }
+
+
+
+      .left ul {
+        flex-direction: column;
+        row-gap: 10px;
+      }
 
       .right {
+        display: none;
+      }
 
-        .burgerMenu {
-          display: initial;
+      a {
+        font-size: 2rem;
+      }
+
+
+    }
+
+    .burgerMenu {
+      display: initial;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+
+    .searchAdaptive {
+      display: initial;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+
+        a {
+          color: #ffffff;
+
+          font-size: 1rem;
+        }
+      }
+
+      .container__menu {
+        position: relative;
+
+        &:hover .menu {
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+          align-items: center;
+        }
+
+        .menu {
+          position: absolute;
+          z-index: 1;
+          display: none;
+
+          & a {
+            color: #ffffff;
+            line-height: 1.7;
+
+            &:last-child {
+              border: 1px solid #fff;
+              border-radius: 20px;
+              background: #ffffff;
+              color: #111;
+              padding: 5px 15px;
+              font-size: 1rem;
+              font-weight: 600;
+              cursor: pointer;
+              margin-bottom: 10px;
+            }
+          }
         }
       }
     }

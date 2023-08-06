@@ -11,6 +11,7 @@ import { MatDialogComponent } from '../mat-dialog/mat-dialog.component';
 })
 export class HeaderTopComponent implements OnInit {
   currentUser!: User;
+  showMenu = false;
   constructor(
     private userService: UserService,
     private dialog: MatDialog,

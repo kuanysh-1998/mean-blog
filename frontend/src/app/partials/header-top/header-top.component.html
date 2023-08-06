@@ -1,17 +1,23 @@
 <div class="header">
-  <div class="container header__content">
+  <div
+    class="container"
+    [ngClass]="{
+      header__content: true,
+      active: showMenu
+    }"
+  >
     <div class="left">
       <ul>
         <li routerLinkActive="active">
           <a routerLink="/" class="header__logo"> KA </a>
         </li>
-        <li routerLinkActive="active">
+        <li (click)="showMenu = false" routerLinkActive="active">
           <a routerLink="/">Главная</a>
         </li>
         <li routerLinkActive="active">
           <a routerLink="/posts">Блог</a>
         </li>
-        <li routerLinkActive="active" *ngIf="currentUser.isAdmin">
+        <li (click)="showMenu = false" routerLinkActive="active" *ngIf="currentUser.isAdmin">
           <a routerLink="/create-post">Новый Пост</a>
         </li>
       </ul>
@@ -32,5 +38,24 @@
     </div>
   </div>
 
-  <mat-icon class="burgerMenu" >menu</mat-icon>
+  <mat-icon *ngIf="!showMenu" class="burgerMenu" (click)="showMenu = !showMenu"
+    >menu</mat-icon
+  >
+    <mat-icon *ngIf="showMenu" class="burgerMenu" (click)="showMenu = false"
+    >close</mat-icon
+  >
+
+  <div class="searchAdaptive">
+    <ul>
+      <mat-icon (click)="openSearchWindow()">search</mat-icon>
+      <a *ngIf="!currentUser.token" routerLink="/login">Войти</a>
+      <li *ngIf="currentUser.token" class="container__menu">
+        <a routerLink="#"> {{ currentUser.username }} </a>
+        <div class="menu">
+          <a routerLink="/profile">Профиль</a>
+          <a (click)="logout()">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
